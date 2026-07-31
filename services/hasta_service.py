@@ -27,3 +27,15 @@ def hasta_ekle():
 
     hastalar.append(hasta)
     print("Hasta başarıyla eklendi.")
+
+
+def hasta_listele():
+    if not hastalar:
+        print("Henüz kayıtlı hasta bulunmamaktadır.")
+        return
+
+    print("\n== KAYITLI HASTALAR ==")
+
+    for hasta in hastalar:
+        print(hasta)
+        print("-" * 40)
