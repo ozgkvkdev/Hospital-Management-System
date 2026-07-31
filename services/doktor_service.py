@@ -43,3 +43,15 @@ def doktor_listele():
     for doktor in doktorlar:
         print(doktor)
         print("="*30)
+
+def doktor_ara():
+    tc_kimlik=input("TC Kimlik Numaranızı Giriniz:")
+    bulundu=False
+    for doktor in doktorlar:
+        if doktor.tc_kimlik_no == tc_kimlik:
+            bulundu=True
+            print(doktor)
+            break
+
+    if not bulundu:
+        print("DOKTOR BULUNMADI.")        
