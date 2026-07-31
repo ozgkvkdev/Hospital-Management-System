@@ -54,4 +54,18 @@ def doktor_ara():
             break
 
     if not bulundu:
-        print("DOKTOR BULUNMADI.")        
+        print("DOKTOR BULUNMADI.") 
+
+
+def doktor_sil():
+    tc_kimlik=input("TC Kimlik Numaranızı Giriniz:")
+    bulundu=False
+    for doktor in doktorlar:
+        if doktor.tc_kimlik_no == tc_kimlik:
+            bulundu=True
+            print("==DOKTOR SİLİNDİ==")
+            doktorlar.remove(doktor)
+            break
+    if not bulundu:
+        print("== KAYITLI DOKTOR BULUNMADI.==")
+
