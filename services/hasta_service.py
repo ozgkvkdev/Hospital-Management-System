@@ -51,4 +51,50 @@ def hasta_ara():
             break
 
     if not bulundu:
-     print("Hasta Bulunamadı.")    
+     print("Hasta Bulunamadı.")   
+
+
+def hasta_sil():
+    tc_kimlik=input("TC Kimlik Numaranızı Giriniz:")
+    bulundu=False
+    for hasta in hastalar:
+        if hasta.tc_kimlik_no ==  tc_kimlik:
+            bulundu=True
+            print("== HASTA SİLİNDİ==")
+            hastalar.remove(hasta)
+            break
+
+    if not bulundu:
+     print("Hasta Bulunamadı")
+
+
+def hasta_guncelle():
+    tc_kimlik=input("TC Kimlik Numaranızı Giriniz:")
+    bulundu= False
+    for hasta in hastalar:
+        if hasta.tc_kimlik_no == tc_kimlik:
+            bulundu=True
+            print("==YENİ BİLGİLER==")
+            ad = input("Adınızı Giriniz: ")
+            soyad = input("Soyadınızı Giriniz: ")
+            yas = int(input("Yaşınızı Giriniz: "))
+            telefon = input("Telefon Numaranızı Giriniz: ")
+            kan_grubu = input("Kan Grubunuzu Giriniz: ")
+            aciliyet_durumu = input("Aciliyet Durumunuzu Giriniz: ")
+            hasta.ad = ad
+            hasta.soyad = soyad
+            hasta.yas = yas
+            hasta.telefon = telefon
+            hasta.kan_grubu = kan_grubu
+            hasta.aciliyet_durumu = aciliyet_durumu
+            print("\n== GÜNCELLENEN HASTA ==")
+            print(hasta)
+            break
+            
+            
+            
+
+    if not bulundu:
+        print("==HASTA BULUNAMADI==")        
+
+                 
