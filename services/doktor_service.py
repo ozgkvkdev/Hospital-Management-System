@@ -69,3 +69,38 @@ def doktor_sil():
     if not bulundu:
         print("== KAYITLI DOKTOR BULUNMADI.==")
 
+
+def doktor_guncelle():
+    tc_kimlik = input("TC Kimlik Numaranızı Giriniz:")
+    bulundu = False
+
+    for doktor in doktorlar:
+        if doktor.tc_kimlik_no == tc_kimlik:
+            bulundu = True
+
+            print("== YENİ BİLGİLER ==")
+
+            ad = input("Adınızı Giriniz: ")
+            soyad = input("Soyadınızı Giriniz: ")
+            yas = int(input("Yaşınızı Giriniz: "))
+            telefon = input("Telefon Numaranızı Giriniz: ")
+            brans = input("Branşınızı Giriniz: ")
+            uzmanlik = input("Uzmanlığınızı Giriniz: ")
+            poliklinik = input("Polikliniğinizi Giriniz: ")
+            musaitlik = True
+
+            doktor.ad = ad
+            doktor.soyad = soyad
+            doktor.yas = yas
+            doktor.telefon = telefon
+            doktor.brans = brans
+            doktor.uzmanlik = uzmanlik
+            doktor.poliklinik = poliklinik
+            doktor.musaitlik = musaitlik
+
+            print("\n== GÜNCELLENEN DOKTOR ==")
+            print(doktor)
+            break
+
+    if not bulundu:
+        print("\n== KAYITLI DOKTOR BULUNAMADI ==")
