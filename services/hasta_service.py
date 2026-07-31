@@ -39,3 +39,16 @@ def hasta_listele():
     for hasta in hastalar:
         print(hasta)
         print("-" * 40)
+
+
+def hasta_ara():
+    tc_kimlik=input("TC Kimlik Numaranızı Giriniz:")
+    bulundu=False
+    for hasta in hastalar:
+        if hasta.tc_kimlik_no == tc_kimlik:
+            bulundu=True
+            print("==HASTA==")
+            break
+
+    if not bulundu:
+     print("Hasta Bulunamadı.")    
