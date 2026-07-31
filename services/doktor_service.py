@@ -32,3 +32,14 @@ def doktor_ekle():
     doktorlar.append(doktor)
 
     print("Doktor başarıyla eklendi.")
+
+
+def doktor_listele():
+    if not doktorlar:
+        print("Henüz kayıtlı doktor bulunmamaktadır.")
+        return
+
+    print("\n==KAYITLI DOKTORLAR==")
+    for doktor in doktorlar:
+        print(doktor)
+        print("="*30)
