@@ -32,3 +32,17 @@ class Doktor(Kisi):
             f"Poliklinik: {self.poliklinik}\n"
             f"Müsaitlik: {self.musaitlik}"
         )
+
+    def to_dict(self):
+     return {
+        "ad": self.ad,
+        "soyad": self.soyad,
+        "yas": self.yas,
+        "tc_kimlik_no": self.tc_kimlik_no,
+        "telefon": self.telefon,
+        "doktor_id": self.doktor_id,
+        "brans": self.brans,
+        "uzmanlik": self.uzmanlik,
+        "poliklinik": self.poliklinik,
+        "musaitlik": self.musaitlik
+    }

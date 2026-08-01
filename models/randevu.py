@@ -33,3 +33,13 @@ class Randevu:
             f"Saat  : {self.saat}\n"
             f"Durum : {self.durum}"
         )
+
+    def to_dict(self):
+     return {
+        "randevu_id": self.randevu_id,
+        "hasta_tc": self.hasta.tc_kimlik_no,
+        "doktor_tc": self.doktor.tc_kimlik_no,
+        "tarih": self.tarih,
+        "saat": self.saat,
+        "durum": self.durum
+    } 

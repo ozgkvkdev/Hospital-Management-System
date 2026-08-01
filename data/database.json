@@ -1,0 +1,38 @@
+{
+    "hastalar": [
+        {
+            "ad": "özgür",
+            "soyad": "kavak",
+            "yas": 20,
+            "tc_kimlik_no": "258",
+            "telefon": "12313",
+            "hasta_id": 1001,
+            "kan_grubu": "a+",
+            "aciliyet_durumu": "acil"
+        }
+    ],
+    "doktorlar": [
+        {
+            "ad": "örnek",
+            "soyad": "version",
+            "yas": 55,
+            "tc_kimlik_no": "123",
+            "telefon": "4568",
+            "doktor_id": 5001,
+            "brans": "kalp",
+            "uzmanlik": "kalp",
+            "poliklinik": "kardiloji",
+            "musaitlik": true
+        }
+    ],
+    "randevular": [
+        {
+            "randevu_id": 1,
+            "hasta_tc": "258",
+            "doktor_tc": "123",
+            "tarih": "2026-10-3",
+            "saat": "17:00",
+            "durum": "Aktif"
+        }
+    ]
+}

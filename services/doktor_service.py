@@ -1,6 +1,24 @@
 from models.doktor import Doktor
+from utils.database import verileri_kaydet, verileri_yukle
+
+veriler = verileri_yukle()
 
 doktorlar = []
+
+for veri in veriler["doktorlar"]:
+    doktor = Doktor(
+        ad=veri["ad"],
+        soyad=veri["soyad"],
+        yas=veri["yas"],
+        tc_kimlik_no=veri["tc_kimlik_no"],
+        telefon=veri["telefon"],
+        doktor_id=veri["doktor_id"],
+        brans=veri["brans"],
+        uzmanlik=veri["uzmanlik"],
+        poliklinik=veri["poliklinik"],
+        musaitlik=veri["musaitlik"]
+    )
+    doktorlar.append(doktor)
 
 
 def doktor_ekle():
@@ -30,6 +48,8 @@ def doktor_ekle():
     )
 
     doktorlar.append(doktor)
+    veriler["doktorlar"].append(doktor.to_dict())
+    verileri_kaydet(veriler)
 
     print("Doktor başarıyla eklendi.")
 

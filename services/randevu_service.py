@@ -1,11 +1,37 @@
 from models.randevu import Randevu
-
 from services.hasta_service import hastalar
 from services.doktor_service import doktorlar
+from utils.database import verileri_yukle, verileri_kaydet
 
-randevular=[
+veriler = verileri_yukle()
 
-]
+randevular = []
+
+for veri in veriler["randevular"]:
+    hasta = None
+    doktor = None
+
+    for h in hastalar:
+        if h.tc_kimlik_no == veri["hasta_tc"]:
+            hasta = h
+            break
+
+    for d in doktorlar:
+        if d.tc_kimlik_no == veri["doktor_tc"]:
+            doktor = d
+            break
+
+    if hasta and doktor:
+        randevu = Randevu(
+            randevu_id=veri["randevu_id"],
+            hasta=hasta,
+            doktor=doktor,
+            tarih=veri["tarih"],
+            saat=veri["saat"],
+            durum=veri["durum"]
+        )
+        randevular.append(randevu)
+
 
 def randevu_olustur():
     secilen_hasta = None
@@ -47,8 +73,11 @@ def randevu_olustur():
     randevu_id = len(randevular) + 1
     durum = "Aktif"
 
-    randevu = Randevu(randevu_id, secilen_hasta, secilen_doktor, tarih, saat, durum)
-    randevular.append(randevu)
+    randevular.append(randevu := Randevu(randevu_id, secilen_hasta, secilen_doktor, tarih, saat, durum))
+
+    veriler["randevular"].append(randevu.to_dict())
+    verileri_kaydet(veriler)
+
     print("Randevu başarıyla oluşturuldu.")
     print(randevu)
 

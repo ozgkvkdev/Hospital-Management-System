@@ -15,6 +15,20 @@ class Hasta(Kisi):
         f"Aciliyet Durumu: {self.aciliyet_durumu}"
     )
 
+    def to_dict(self):
+     return {
+        "ad": self.ad,
+        "soyad": self.soyad,
+        "yas": self.yas,
+        "tc_kimlik_no": self.tc_kimlik_no,
+        "telefon": self.telefon,
+        "hasta_id": self.hasta_id,
+        "kan_grubu": self.kan_grubu,
+        "aciliyet_durumu": self.aciliyet_durumu
+    }
+
+    
+
     
 
 
