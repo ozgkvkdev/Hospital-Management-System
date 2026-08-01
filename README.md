@@ -1,29 +1,24 @@
 # 🏥 Hastane Yönetim Sistemi
 
-Python ile geliştirilen, Nesne Tabanlı Programlama (OOP) ve algoritma mantığını uygulamayı amaçlayan konsol tabanlı bir Hastane Yönetim Sistemi.
+Python ile geliştirilen, nesne tabanlı programlama (OOP) mantığını uygulamak amacıyla hazırlanmış konsol tabanlı bir hastane yönetim sistemidir.
 
 ---
 
 ## 📌 Proje Hakkında
 
-Bu proje, Python öğrenme sürecinde OOP (Object-Oriented Programming) konularını gerçek bir proje üzerinde uygulamak amacıyla geliştirilmektedir.
-
-Proje ilerledikçe yeni OOP konuları ve algoritmalar eklenerek sistem daha kapsamlı hale getirilecektir.
+Bu proje, Python öğrenme sürecinde OOP kavramlarını gerçek bir proje üzerinde uygulamak amacıyla geliştirilmiştir. Şu anki sürümde hasta, doktor, randevu ve poliklinik yönetimi desteklenmekte; veriler JSON dosyasına kaydedilmektedir.
 
 ---
 
-## ✨ Özellikler
+## ✨ Mevcut Özellikler
 
-- 👤 Hasta Yönetimi
-- 👨‍⚕️ Doktor Yönetimi
-- 📅 Randevu Yönetimi
-- 🏥 Poliklinik Yönetimi
-- 🚨 Aciliyet Öncelik Sistemi
-- 🔍 Doktor Atama Algoritması
-- ⏰ Randevu Çakışma Kontrolü
-- ⌛ Bekleme Süresi Hesaplama
-- 📊 Gün Sonu İstatistikleri
-- 💾 JSON ile Veri Kaydetme
+- 👤 Hasta ekleme, listeleme, arama, güncelleme ve silme
+- 👨‍⚕️ Doktor ekleme, listeleme, arama, güncelleme ve silme
+- 📅 Randevu oluşturma, listeleme, arama, güncelleme ve iptal etme
+- 🏥 Poliklinik modeli ve veri yapısı
+- ✅ TC kimlik, yaş, telefon, tarih ve saat doğrulama
+- 📊 Temel rapor üretimi
+- 💾 JSON ile kalıcı veri saklama
 
 ---
 
@@ -32,14 +27,36 @@ Proje ilerledikçe yeni OOP konuları ve algoritmalar eklenerek sistem daha kaps
 - Python 3
 - Nesne Tabanlı Programlama (OOP)
 - JSON
-- Git
-- GitHub
+- Git / GitHub
+- Unittest
+
+---
+
+## ▶️ Nasıl Çalıştırılır
+
+1. Proje klasörüne gidin:
+   ```bash
+   cd Hospital-Management-System
+   ```
+
+2. Programı çalıştırın:
+   ```bash
+   python main.py
+   ```
+
+3. İsterseniz testleri çalıştırabilirsiniz:
+   ```bash
+   python -m unittest discover -s tests -v
+   ```
 
 ---
 
 ## 🚀 Proje Durumu
 
-🚧 Geliştirildi
+✅ Şu anlık olarak temel işlevler tamamlanmıştır.
 
-## geliştirici:
+---
+
+## 👨‍💻 Geliştirici
+
 Özgür Kavak

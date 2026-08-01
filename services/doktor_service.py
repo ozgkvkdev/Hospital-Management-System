@@ -85,13 +85,20 @@ def doktor_sil():
             bulundu=True
             print("==DOKTOR SİLİNDİ==")
             doktorlar.remove(doktor)
+
+            veriler["doktorlar"] = [
+           d for d in veriler["doktorlar"]
+           if d["tc_kimlik_no"] != tc_kimlik
+           ]
+            verileri_kaydet(veriler)
+
+            print("== DOKTOR SİLİNDİ ==")
             break
     if not bulundu:
         print("== KAYITLI DOKTOR BULUNMADI.==")
 
-
 def doktor_guncelle():
-    tc_kimlik = input("TC Kimlik Numaranızı Giriniz:")
+    tc_kimlik = input("TC Kimlik Numaranızı Giriniz: ")
     bulundu = False
 
     for doktor in doktorlar:
@@ -100,23 +107,22 @@ def doktor_guncelle():
 
             print("== YENİ BİLGİLER ==")
 
-            ad = input("Adınızı Giriniz: ")
-            soyad = input("Soyadınızı Giriniz: ")
-            yas = int(input("Yaşınızı Giriniz: "))
-            telefon = input("Telefon Numaranızı Giriniz: ")
-            brans = input("Branşınızı Giriniz: ")
-            uzmanlik = input("Uzmanlığınızı Giriniz: ")
-            poliklinik = input("Polikliniğinizi Giriniz: ")
-            musaitlik = True
+            doktor.ad = input("Adınızı Giriniz: ")
+            doktor.soyad = input("Soyadınızı Giriniz: ")
+            doktor.yas = int(input("Yaşınızı Giriniz: "))
+            doktor.telefon = input("Telefon Numaranızı Giriniz: ")
+            doktor.brans = input("Branşınızı Giriniz: ")
+            doktor.uzmanlik = input("Uzmanlığınızı Giriniz: ")
+            doktor.poliklinik = input("Polikliniğinizi Giriniz: ")
+            doktor.musaitlik = True
 
-            doktor.ad = ad
-            doktor.soyad = soyad
-            doktor.yas = yas
-            doktor.telefon = telefon
-            doktor.brans = brans
-            doktor.uzmanlik = uzmanlik
-            doktor.poliklinik = poliklinik
-            doktor.musaitlik = musaitlik
+            
+            for i, veri in enumerate(veriler["doktorlar"]):
+                if veri["tc_kimlik_no"] == tc_kimlik:
+                    veriler["doktorlar"][i] = doktor.to_dict()
+                    break
+
+            verileri_kaydet(veriler)
 
             print("\n== GÜNCELLENEN DOKTOR ==")
             print(doktor)

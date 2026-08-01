@@ -21,6 +21,7 @@ from services.randevu_service import (
     randevu_guncelle,
     randevu_iptal_et
 )
+from utils.helpers import baslik_yaz
 
 
 def hasta_menu():
@@ -109,9 +110,7 @@ def randevu_menu():
 
 def ana_menu():
     while True:
-        print("\n===================================")
-        print("     HASTANE YÖNETİM SİSTEMİ")
-        print("===================================")
+        baslik_yaz("HASTANE YÖNETİM SİSTEMİ")
         print("1- Hasta İşlemleri")
         print("2- Doktor İşlemleri")
         print("3- Randevu İşlemleri")
