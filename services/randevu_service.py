@@ -51,3 +51,54 @@ def randevu_olustur():
     randevular.append(randevu)
     print("Randevu başarıyla oluşturuldu.")
     print(randevu)
+
+def randevu_listele():
+  if not randevular:
+    print("Henüz kayıtlı randevu bulunamamaktadır.")
+    return
+
+  print("\n== KAYITLI RANDEVULAR ==")
+  for randevu in randevular:
+    print(randevu)
+    print("="*40)
+
+def randevu_ara():
+    tc_kimlik=input("TC Kimlik Numaranızı Giriniz:")
+    bulundu=False
+    for randevu in randevular:
+        if randevu.hasta.tc_kimlik_no == tc_kimlik:
+            bulundu=True
+            print("== RANDEVU BULUNDU ==")
+            print(randevu)
+            break
+    if not bulundu:
+        print("Randevu bulunamadı.")
+
+
+def randevu_iptal_et():
+   tc_kimlik=input("TC Kimlik Numaranızı Giriniz:")
+   bulundu=False
+   for randevu in randevular:
+        if randevu.hasta.tc_kimlik_no == tc_kimlik:
+            bulundu=True
+            print("== RANDEVU İPTAL EDİLDİ ==")
+            randevu.durum = "İptal Edildi"
+            break
+   if not bulundu:
+        print("Randevu bulunamadı.")
+
+
+def randevu_guncelle():
+   tc_kimlik=input("TC Kimlik Numaranızı Giriniz:")
+   bulundu=False
+   for randevu in randevular:
+          if randevu.hasta.tc_kimlik_no == tc_kimlik:
+                bulundu=True
+                print("== RANDEVU GÜNCELLENDİ ==")
+                yeni_tarih = input("Yeni Randevu Tarihini Giriniz (YYYY-AA-GG): ")
+                yeni_saat = input("Yeni Randevu Saatini Giriniz (HH:MM): ")
+                randevu.tarih = yeni_tarih
+                randevu.saat = yeni_saat
+                break
+   if not bulundu:
+        print("Randevu bulunamadı.")
